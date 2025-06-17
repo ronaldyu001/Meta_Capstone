@@ -1,2 +1,1 @@
-# test-repo
-coursera
+# Meta DB Capstone
