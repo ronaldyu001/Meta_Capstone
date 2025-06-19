@@ -1,15 +1,16 @@
-import initialize_db
+import db_funcs.create_db as create_db
 
 
 """
 Set up the LittleLemon database.
 """
 # connect (login credentials manually set)
-connection = initialize_db.connect()
+connection = create_db.connect()
+
 # create database
-initialize_db.create_db( connection )
+create_db.create_db( connection )
 # create tables (this will drop the existing tables)
-initialize_db.create_tables( connection )
+create_db.create_tables( connection )
 # populate tables
-initialize_db.populate_tables( connection )
+create_db.populate_tables( connection )
 
