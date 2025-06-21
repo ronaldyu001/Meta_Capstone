@@ -1,17 +1,7 @@
 """
 ---------------------------------------------------------------
-Little Lemon Init:
 
-- Create virtual environment for this project.
-- Connect to local mysql server
-    - Make sure local mysql server is created.
-        - python3 -m venv venv
-        - source venv/bin/activate
-- Create database
-- Create tables
-- Insert data into tables
 
-( This code was previously provided for use during the Meta DB Engineering Certificate )
 ---------------------------------------------------------------
 """
 
@@ -20,7 +10,19 @@ Little Lemon Init:
 import mysql.connector as connector
 from mysql.connector import Error
 from mysql.connector import pooling
-from utility_funcs import create_cursor
+
+
+
+# create cursor
+def create_cursor( connection ):
+    # create cursor
+    try:
+        cursor = connection.cursor()
+        print(f'Cursor for "ronald" created.\n')
+    except Error as Err:
+        raise Err(f'Could not create cursor:\nError Number: {Err.errno}\nError Message: {Err.errmsg}\n')
+    
+    return cursor
 
 
 def connect():
